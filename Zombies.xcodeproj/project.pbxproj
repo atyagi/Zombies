@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8BEBF42113AFA57B00805A3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42013AFA57B00805A3B /* UIKit.framework */; };
+		8BEBF42313AFA57B00805A3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42213AFA57B00805A3B /* Foundation.framework */; };
+		8BEBF42513AFA57B00805A3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42413AFA57B00805A3B /* CoreGraphics.framework */; };
+		8BEBF42B13AFA57B00805A3B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBF42913AFA57B00805A3B /* InfoPlist.strings */; };
+		8BEBF42D13AFA57B00805A3B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBF42C13AFA57B00805A3B /* main.m */; };
+		8BEBF43113AFA57B00805A3B /* ZombiesAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBF43013AFA57B00805A3B /* ZombiesAppDelegate.m */; };
+		8BEBF43313AFA57B00805A3B /* ZombiesViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBF43213AFA57B00805A3B /* ZombiesViewController.h */; };
+		8BEBF43513AFA57B00805A3B /* ZombiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBF43413AFA57B00805A3B /* ZombiesViewController.m */; };
+		8BEBF43813AFA57B00805A3B /* ZombiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBF43613AFA57B00805A3B /* ZombiesViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8BEBF41C13AFA57B00805A3B /* Zombies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zombies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BEBF42013AFA57B00805A3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8BEBF42213AFA57B00805A3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8BEBF42413AFA57B00805A3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8BEBF42813AFA57B00805A3B /* Zombies-Info.plist */ = {isa = PBXFileReference; path = "Zombies-Info.plist"; sourceTree = "<group>"; };
+		8BEBF42A13AFA57B00805A3B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8BEBF42C13AFA57B00805A3B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8BEBF42E13AFA57B00805A3B /* Zombies-Prefix.pch */ = {isa = PBXFileReference; path = "Zombies-Prefix.pch"; sourceTree = "<group>"; };
+		8BEBF42F13AFA57B00805A3B /* ZombiesAppDelegate.h */ = {isa = PBXFileReference; path = ZombiesAppDelegate.h; sourceTree = "<group>"; };
+		8BEBF43013AFA57B00805A3B /* ZombiesAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZombiesAppDelegate.m; sourceTree = "<group>"; };
+		8BEBF43213AFA57B00805A3B /* ZombiesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZombiesViewController.h; sourceTree = "<group>"; };
+		8BEBF43413AFA57B00805A3B /* ZombiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZombiesViewController.m; sourceTree = "<group>"; };
+		8BEBF43713AFA57B00805A3B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZombiesViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8BEBF41913AFA57B00805A3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BEBF42113AFA57B00805A3B /* UIKit.framework in Frameworks */,
+				8BEBF42313AFA57B00805A3B /* Foundation.framework in Frameworks */,
+				8BEBF42513AFA57B00805A3B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8BEBF41113AFA57B00805A3B = {
+			isa = PBXGroup;
+			children = (
+				8BEBF42613AFA57B00805A3B /* Zombies */,
+				8BEBF41F13AFA57B00805A3B /* Frameworks */,
+				8BEBF41D13AFA57B00805A3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BEBF41D13AFA57B00805A3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BEBF41C13AFA57B00805A3B /* Zombies.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BEBF41F13AFA57B00805A3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BEBF42013AFA57B00805A3B /* UIKit.framework */,
+				8BEBF42213AFA57B00805A3B /* Foundation.framework */,
+				8BEBF42413AFA57B00805A3B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8BEBF42613AFA57B00805A3B /* Zombies */ = {
+			isa = PBXGroup;
+			children = (
+				8BEBF42F13AFA57B00805A3B /* ZombiesAppDelegate.h */,
+				8BEBF43013AFA57B00805A3B /* ZombiesAppDelegate.m */,
+				8BEBF43213AFA57B00805A3B /* ZombiesViewController.h */,
+				8BEBF43413AFA57B00805A3B /* ZombiesViewController.m */,
+				8BEBF43613AFA57B00805A3B /* ZombiesViewController.xib */,
+				8BEBF42713AFA57B00805A3B /* Supporting Files */,
+			);
+			path = Zombies;
+			sourceTree = "<group>";
+		};
+		8BEBF42713AFA57B00805A3B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BEBF42813AFA57B00805A3B /* Zombies-Info.plist */,
+				8BEBF42913AFA57B00805A3B /* InfoPlist.strings */,
+				8BEBF42C13AFA57B00805A3B /* main.m */,
+				8BEBF42E13AFA57B00805A3B /* Zombies-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8BEBF41B13AFA57B00805A3B /* Zombies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8BEBF43B13AFA57B00805A3B /* Build configuration list for PBXNativeTarget "Zombies" */;
+			buildPhases = (
+				8BEBF41813AFA57B00805A3B /* Sources */,
+				8BEBF41913AFA57B00805A3B /* Frameworks */,
+				8BEBF41A13AFA57B00805A3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zombies;
+			productName = Zombies;
+			productReference = 8BEBF41C13AFA57B00805A3B /* Zombies.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BEBF41313AFA57B00805A3B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 8BEBF41613AFA57B00805A3B /* Build configuration list for PBXProject "Zombies" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 8BEBF41113AFA57B00805A3B;
+			productRefGroup = 8BEBF41D13AFA57B00805A3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8BEBF41B13AFA57B00805A3B /* Zombies */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8BEBF41A13AFA57B00805A3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BEBF42B13AFA57B00805A3B /* InfoPlist.strings in Resources */,
+				8BEBF43313AFA57B00805A3B /* ZombiesViewController.h in Resources */,
+				8BEBF43813AFA57B00805A3B /* ZombiesViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8BEBF41813AFA57B00805A3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BEBF42D13AFA57B00805A3B /* main.m in Sources */,
+				8BEBF43113AFA57B00805A3B /* ZombiesAppDelegate.m in Sources */,
+				8BEBF43513AFA57B00805A3B /* ZombiesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8BEBF42913AFA57B00805A3B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BEBF42A13AFA57B00805A3B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8BEBF43613AFA57B00805A3B /* ZombiesViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8BEBF43713AFA57B00805A3B /* en */,
+			);
+			name = ZombiesViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8BEBF43913AFA57B00805A3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8BEBF43A13AFA57B00805A3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8BEBF43C13AFA57B00805A3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zombies/Zombies-Prefix.pch";
+				INFOPLIST_FILE = "Zombies/Zombies-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8BEBF43D13AFA57B00805A3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Zombies/Zombies-Prefix.pch";
+				INFOPLIST_FILE = "Zombies/Zombies-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8BEBF41613AFA57B00805A3B /* Build configuration list for PBXProject "Zombies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BEBF43913AFA57B00805A3B /* Debug */,
+				8BEBF43A13AFA57B00805A3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BEBF43B13AFA57B00805A3B /* Build configuration list for PBXNativeTarget "Zombies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BEBF43C13AFA57B00805A3B /* Debug */,
+				8BEBF43D13AFA57B00805A3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8BEBF41313AFA57B00805A3B /* Project object */;
+}
