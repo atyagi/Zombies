@@ -20,10 +20,10 @@
 @interface MainViewController : UIViewController 
 <UIAccelerometerDelegate> 
 {
+    IBOutlet UIButton *gameOverButton;
     IBOutlet UILabel *scoreLabel;
     IBOutlet UIImageView *mainChar;
     IBOutlet UILabel *timeLeftLabel;
-    IBOutlet UILabel *youWin;
     int score;
     float speedRatio;
     double x;
@@ -37,10 +37,11 @@
 
 - (void)backgroundMoveEnemy;
 - (BOOL)viewCollides:(UIView*)view1 withView:(UIView*)view2;
+- (IBAction)gameOver:(id)sender;
 
 @property (weak, nonatomic) IBOutlet id <MainViewControllerDelegate> delegate;
 @property (strong) UILabel *scoreLabel;
-@property (strong) UILabel *youWin;
+@property (strong) UIButton *gameOverButton;
 @property (strong) UILabel *timeLeftLabel;
 @property (strong) UIImageView *mainChar;
 @property (strong) NSMutableArray *enemyList;

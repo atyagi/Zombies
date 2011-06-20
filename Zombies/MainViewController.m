@@ -11,7 +11,7 @@
 @implementation MainViewController
 
 @synthesize x, y, speedRatio, scoreLabel, score, mainChar, 
-    enemyList, timeLeftLabel, timeLeft, timeIsUp, youWin, delegate;
+    enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -155,16 +155,16 @@
     }
     else {
         [mainChar removeFromSuperview];
-        youWin.hidden = NO;
+        gameOverButton.hidden = NO;
         UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
         accel.delegate = nil;
-        //Sleep for 10 seconds
-        [NSThread sleepForTimeInterval:10];
-        //Give up view
-        [self.delegate mainViewDidFinish:self];
+        
     }
 }
 
+- (IBAction)gameOver:(id)sender {
+    [self.delegate mainViewDidFinish:self];
+}
 
 #pragma mark - View lifecycle
 
