@@ -196,7 +196,7 @@
                            withObject:nil];
     
     score = 0;
-    timeLeft = 60;
+    timeLeft = 30;
     timeIsUp = NO;
     
     standardPosition = mainChar.center;
