@@ -38,6 +38,7 @@
 - (void)backgroundMoveEnemy;
 - (BOOL)viewCollides:(UIView*)view1 withView:(UIView*)view2;
 - (IBAction)gameOver:(id)sender;
+- (IBAction)showMenu:(id)sender;
 
 @property (weak, nonatomic) IBOutlet id <MainViewControllerDelegate> delegate;
 @property (strong) UILabel *scoreLabel;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B657C8F13AFFC3D00696939 /* ZombiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B657C8D13AFFC3D00696939 /* ZombiesViewController.xib */; };
 		8BEBF42113AFA57B00805A3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42013AFA57B00805A3B /* UIKit.framework */; };
 		8BEBF42313AFA57B00805A3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42213AFA57B00805A3B /* Foundation.framework */; };
 		8BEBF42513AFA57B00805A3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42413AFA57B00805A3B /* CoreGraphics.framework */; };
@@ -22,12 +23,13 @@
 		8BEBF45013AFA64B00805A3B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBF44F13AFA64B00805A3B /* MainViewController.xib */; };
 		8BEBF45313AFA66D00805A3B /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBF45213AFA66C00805A3B /* Enemy.m */; };
 		8BEBF45713AFA99500805A3B /* ZombiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBF45513AFA99400805A3B /* ZombiesViewController.m */; };
-		8BEBF45813AFA99500805A3B /* ZombiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBF45613AFA99400805A3B /* ZombiesViewController.xib */; };
 		8BEBF45E13AFDB0200805A3B /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BEBF45C13AFDB0200805A3B /* FlipsideViewController.m */; };
 		8BEBF45F13AFDB0200805A3B /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEBF45D13AFDB0200805A3B /* FlipsideViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B657C8A13AFFBBC00696939 /* ZombiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZombiesViewController.h; sourceTree = "<group>"; };
+		8B657C8D13AFFC3D00696939 /* ZombiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZombiesViewController.xib; sourceTree = "<group>"; };
 		8BEBF41C13AFA57B00805A3B /* Zombies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zombies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEBF42013AFA57B00805A3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8BEBF42213AFA57B00805A3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -48,9 +50,7 @@
 		8BEBF44F13AFA64B00805A3B /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		8BEBF45113AFA66C00805A3B /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
 		8BEBF45213AFA66C00805A3B /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enemy.m; sourceTree = "<group>"; };
-		8BEBF45413AFA99400805A3B /* ZombiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZombiesViewController.h; path = Zombies.xcodeproj/ZombiesViewController.h; sourceTree = SOURCE_ROOT; };
 		8BEBF45513AFA99400805A3B /* ZombiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZombiesViewController.m; path = Zombies.xcodeproj/ZombiesViewController.m; sourceTree = SOURCE_ROOT; };
-		8BEBF45613AFA99400805A3B /* ZombiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ZombiesViewController.xib; path = Zombies.xcodeproj/ZombiesViewController.xib; sourceTree = SOURCE_ROOT; };
 		8BEBF45B13AFDB0100805A3B /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		8BEBF45C13AFDB0200805A3B /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		8BEBF45D13AFDB0200805A3B /* FlipsideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlipsideViewController.xib; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 			children = (
 				8BEBF42F13AFA57B00805A3B /* ZombiesAppDelegate.h */,
 				8BEBF43013AFA57B00805A3B /* ZombiesAppDelegate.m */,
-				8BEBF45413AFA99400805A3B /* ZombiesViewController.h */,
+				8B657C8A13AFFBBC00696939 /* ZombiesViewController.h */,
 				8BEBF45513AFA99400805A3B /* ZombiesViewController.m */,
 				8BEBF45B13AFDB0100805A3B /* FlipsideViewController.h */,
 				8BEBF45C13AFDB0200805A3B /* FlipsideViewController.m */,
@@ -110,7 +110,7 @@
 				8BEBF44D13AFA61500805A3B /* MainViewController.m */,
 				8BEBF45113AFA66C00805A3B /* Enemy.h */,
 				8BEBF45213AFA66C00805A3B /* Enemy.m */,
-				8BEBF45613AFA99400805A3B /* ZombiesViewController.xib */,
+				8B657C8D13AFFC3D00696939 /* ZombiesViewController.xib */,
 				8BEBF44F13AFA64B00805A3B /* MainViewController.xib */,
 				8BEBF45D13AFDB0200805A3B /* FlipsideViewController.xib */,
 				8BEBF42713AFA57B00805A3B /* Supporting Files */,
@@ -188,8 +188,8 @@
 				8BEBF44913AFA5CD00805A3B /* zombie.png in Resources */,
 				8BEBF44B13AFA5E000805A3B /* Icon@2x.png in Resources */,
 				8BEBF45013AFA64B00805A3B /* MainViewController.xib in Resources */,
-				8BEBF45813AFA99500805A3B /* ZombiesViewController.xib in Resources */,
 				8BEBF45F13AFDB0200805A3B /* FlipsideViewController.xib in Resources */,
+				8B657C8F13AFFC3D00696939 /* ZombiesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +309,7 @@
 				8BEBF43D13AFA57B00805A3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MainViewController.h"
+#import "FlipsideViewController.h"
 
-@interface ZombiesViewController : UIViewController
+@interface ZombiesViewController : UIViewController 
+<MainViewControllerDelegate, FlipsideViewControllerDelegate>
+{
+    
+}
+
+-(IBAction)playGame:(id)sender;
+-(IBAction)viewSettings:(id)sender;
+-(IBAction)viewHighScores:(id)sender;
+
 
 @end

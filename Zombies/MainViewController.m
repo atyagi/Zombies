@@ -125,7 +125,7 @@
                     score = score + 1;
                     [iteratedEnemy removeFromSuperview];
                     
-                    CGPoint currentPos = iteratedEnemy.center;
+                    CGPoint currentPos;
                     
                     if (iteratedEnemy.myDirection == UP) {
                         iteratedEnemy.myDirection = LEFT;
@@ -182,7 +182,6 @@
         Enemy *newEnemy = [[Enemy alloc] initWithImage:[UIImage imageNamed:@"person.png"]];
         newEnemy.center = CGPointMake((arc4random() % 300) + 20, 419);
         newEnemy.myDirection = UP;
-        newEnemy.directionChanged = NO;
         [enemyList addObject:newEnemy];
         [self.view addSubview:newEnemy];
     }
@@ -234,6 +233,10 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+- (IBAction)showMenu:(id)sender {
+    [self gameOver:sender];
 }
 
 

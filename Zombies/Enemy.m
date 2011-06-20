@@ -10,7 +10,7 @@
 
 @implementation Enemy
 
-@synthesize myDirection, directionChanged;
+@synthesize myDirection;
 
 - (id)init
 {
@@ -20,13 +20,6 @@
     }
     
     return self;
-}
-
-- (void)resetDirection:(CGPoint)currentPosition {
-    if (myDirection == UP) currentPosition = CGPointMake((arc4random() % 300) + 20, 420);
-    else if (myDirection == DOWN) currentPosition = CGPointMake((arc4random() % 300) + 20, 10);
-    else if (myDirection == LEFT) currentPosition = CGPointMake(315, (arc4random() % 300 + 20));
-    else currentPosition = CGPointMake(10, (arc4random() % 300 + 20));
 }
 
 - (void)moveEnemyUp {

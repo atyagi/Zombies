@@ -13,17 +13,14 @@
         LEFT, RIGHT, DOWN, UP
     };
     enum Direction myDirection;
-    BOOL directionChanged;
     
 }
 
 @property enum Direction myDirection;
-@property BOOL directionChanged;
 
 -(void)moveEnemyUp;
 -(void)moveEnemyDown;
 -(void)moveEnemyLeft;
 -(void)moveEnemyRight;
--(void)resetDirection:(CGPoint)currentPosition;
 
 @end
