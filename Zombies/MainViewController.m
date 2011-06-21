@@ -1,6 +1,8 @@
 //
 //  MainViewController.m
-//  AccelerometerWithSettings
+//  Zombies
+//
+//  Gameplay view controller
 //
 //  Created by Ankit Tyagi on 6/9/11.
 //  Copyright 2011 Ankit Tyagi. All rights reserved.

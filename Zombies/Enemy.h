@@ -1,6 +1,6 @@
 //
 //  Enemy.h
-//  AccelerometerWithSettings
+//  Zombies
 //
 //  Created by Ankit Tyagi on 6/15/11.
 //  Copyright 2011 Ankit Tyagi. All rights reserved.

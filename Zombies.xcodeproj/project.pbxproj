@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8B657C8F13AFFC3D00696939 /* ZombiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B657C8D13AFFC3D00696939 /* ZombiesViewController.xib */; };
+		8BC317CC13B012CE00208E41 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC317CA13B012CE00208E41 /* HighScoreViewController.m */; };
+		8BC317CD13B012CE00208E41 /* HighScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC317CB13B012CE00208E41 /* HighScoreViewController.xib */; };
 		8BEBF42113AFA57B00805A3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42013AFA57B00805A3B /* UIKit.framework */; };
 		8BEBF42313AFA57B00805A3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42213AFA57B00805A3B /* Foundation.framework */; };
 		8BEBF42513AFA57B00805A3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42413AFA57B00805A3B /* CoreGraphics.framework */; };
@@ -30,6 +32,9 @@
 /* Begin PBXFileReference section */
 		8B657C8A13AFFBBC00696939 /* ZombiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZombiesViewController.h; sourceTree = "<group>"; };
 		8B657C8D13AFFC3D00696939 /* ZombiesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZombiesViewController.xib; sourceTree = "<group>"; };
+		8BC317C913B012CE00208E41 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreViewController.h; sourceTree = "<group>"; };
+		8BC317CA13B012CE00208E41 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
+		8BC317CB13B012CE00208E41 /* HighScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HighScoreViewController.xib; sourceTree = "<group>"; };
 		8BEBF41C13AFA57B00805A3B /* Zombies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zombies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEBF42013AFA57B00805A3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8BEBF42213AFA57B00805A3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -110,6 +115,9 @@
 				8BEBF44D13AFA61500805A3B /* MainViewController.m */,
 				8BEBF45113AFA66C00805A3B /* Enemy.h */,
 				8BEBF45213AFA66C00805A3B /* Enemy.m */,
+				8BC317C913B012CE00208E41 /* HighScoreViewController.h */,
+				8BC317CA13B012CE00208E41 /* HighScoreViewController.m */,
+				8BC317CB13B012CE00208E41 /* HighScoreViewController.xib */,
 				8B657C8D13AFFC3D00696939 /* ZombiesViewController.xib */,
 				8BEBF44F13AFA64B00805A3B /* MainViewController.xib */,
 				8BEBF45D13AFDB0200805A3B /* FlipsideViewController.xib */,
@@ -190,6 +198,7 @@
 				8BEBF45013AFA64B00805A3B /* MainViewController.xib in Resources */,
 				8BEBF45F13AFDB0200805A3B /* FlipsideViewController.xib in Resources */,
 				8B657C8F13AFFC3D00696939 /* ZombiesViewController.xib in Resources */,
+				8BC317CD13B012CE00208E41 /* HighScoreViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +215,7 @@
 				8BEBF45313AFA66D00805A3B /* Enemy.m in Sources */,
 				8BEBF45713AFA99500805A3B /* ZombiesViewController.m in Sources */,
 				8BEBF45E13AFDB0200805A3B /* FlipsideViewController.m in Sources */,
+				8BC317CC13B012CE00208E41 /* HighScoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

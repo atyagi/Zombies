@@ -2,8 +2,10 @@
 //  ZombiesViewController.m
 //  Zombies
 //
-//  Created by Developer on 6/20/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Main menu view controller.
+//
+//  Created by Ankit Tyagi on 6/20/11.
+//  Copyright 2011 Ankit Tyagi. All rights reserved.
 //
 
 #import "ZombiesViewController.h"

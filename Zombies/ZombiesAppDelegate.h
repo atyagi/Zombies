@@ -2,8 +2,8 @@
 //  ZombiesAppDelegate.h
 //  Zombies
 //
-//  Created by Developer on 6/20/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Ankit Tyagi on 6/20/11.
+//  Copyright 2011 Ankit Tyagi. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
