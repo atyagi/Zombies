@@ -13,11 +13,12 @@
 @class FlipsideViewController;
 
 @protocol FlipsideViewControllerDelegate
+
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
+
 @end
 
-@interface FlipsideViewController : UIViewController
-{
+@interface FlipsideViewController : UIViewController {
     IBOutlet UISegmentedControl *speed;
 }
 

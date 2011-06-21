@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HighScoreViewController : UIViewController
+@class HighScoreViewController;
+
+@protocol HighScoreViewControllerDelegate 
+
+- (void)highScoreViewDidFinish:(HighScoreViewController*)controller;
+
+@end
+
+@interface HighScoreViewController : UIViewController {
+}
+
+@property (weak, nonatomic) IBOutlet id <HighScoreViewControllerDelegate> delegate;
+
+- (IBAction)done:(id)sender;
 
 @end

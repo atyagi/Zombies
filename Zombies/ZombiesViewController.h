@@ -11,9 +11,10 @@
 #import <UIKit/UIKit.h>
 #import "MainViewController.h"
 #import "FlipsideViewController.h"
+#import "HighScoreViewController.h"
 
 @interface ZombiesViewController : UIViewController 
-<MainViewControllerDelegate, FlipsideViewControllerDelegate>
+<MainViewControllerDelegate, FlipsideViewControllerDelegate, HighScoreViewControllerDelegate>
 {
     
 }

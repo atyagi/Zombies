@@ -37,7 +37,10 @@
 }
 
 - (IBAction)viewHighScores:(id)sender {
-    
+    HighScoreViewController *highScoresViewController = [[HighScoreViewController alloc] initWithNibName:@"HighScoreViewController" bundle:nil];
+    highScoresViewController.delegate = self;
+    highScoresViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentModalViewController:highScoresViewController animated:YES];
 }
 
 - (IBAction)viewSettings:(id)sender {
@@ -78,6 +81,12 @@
 #pragma mark - FlipsideViewControllerDelegate
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - HighScoreViewControllerDelegate
+
+- (void)highScoreViewDidFinish:(HighScoreViewController *)controller {
     [self dismissModalViewControllerAnimated:YES];
 }
 

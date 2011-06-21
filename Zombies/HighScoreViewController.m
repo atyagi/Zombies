@@ -10,6 +10,8 @@
 
 @implementation HighScoreViewController
 
+@synthesize delegate = _delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -25,6 +27,10 @@
     [super didReceiveMemoryWarning];
     
     // Release any cached data, images, etc that aren't in use.
+}
+
+- (IBAction)done:(id)sender {
+    [self.delegate highScoreViewDidFinish:self];
 }
 
 #pragma mark - View lifecycle
