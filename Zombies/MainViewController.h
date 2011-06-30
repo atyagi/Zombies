@@ -10,6 +10,8 @@
 
 #import "Enemy.h"
 #import <CoreMotion/CMMotionManager.h>
+#import "HighScoreSingletonData.h"
+#import "HighScoreInputViewController.h"
 
 @class MainViewController;
 
@@ -20,12 +22,13 @@
 @end
 
 @interface MainViewController : UIViewController 
-<UIAccelerometerDelegate> 
+<UIAccelerometerDelegate, HighScoreInputViewControllerDelegate> 
 {
     IBOutlet UIButton *gameOverButton;
     IBOutlet UILabel *scoreLabel;
     IBOutlet UIImageView *mainChar;
     IBOutlet UILabel *timeLeftLabel;
+    IBOutlet UIButton *menuButton;
     int score;
     float speedRatio;
     double x;
@@ -45,6 +48,7 @@
 @property (weak, nonatomic) IBOutlet id <MainViewControllerDelegate> delegate;
 @property (strong) UILabel *scoreLabel;
 @property (strong) UIButton *gameOverButton;
+@property (strong) UIButton *menuButton;
 @property (strong) UILabel *timeLeftLabel;
 @property (strong) UIImageView *mainChar;
 @property (strong) NSMutableArray *enemyList;

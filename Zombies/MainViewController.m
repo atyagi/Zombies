@@ -12,7 +12,7 @@
 
 @implementation MainViewController
 
-@synthesize x, y, speedRatio, scoreLabel, score, mainChar, 
+@synthesize x, y, speedRatio, scoreLabel, score, mainChar, menuButton, 
     enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 
 - (void)didReceiveMemoryWarning
@@ -156,11 +156,22 @@
         
     }
     else {
-        [mainChar removeFromSuperview];
-        gameOverButton.hidden = NO;
         UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
         accel.delegate = nil;
-        
+        menuButton.hidden = YES;
+        HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScore];
+        if ([highScores.tree belongsInHighScores:score]) {
+            HighScoreInputViewController *highScoreInputViewController = [[HighScoreInputViewController alloc] initWithNibName:@"HighScoreInputViewController" bundle:nil];
+            highScoreInputViewController.delegate = self;
+            highScoreInputViewController.newScore = score;
+            highScoreInputViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+            [self presentModalViewController:highScoreInputViewController animated:YES];
+            
+        }
+        else {
+            [mainChar removeFromSuperview];
+            gameOverButton.hidden = NO;
+        }
     }
 }
 
@@ -197,7 +208,7 @@
                            withObject:nil];
     
     score = 0;
-    timeLeft = 30;
+    timeLeft = 20;
     timeIsUp = NO;
     
     standardPosition = mainChar.center;
@@ -239,6 +250,14 @@
 
 - (IBAction)showMenu:(id)sender {
     [self gameOver:sender];
+}
+
+#pragma Mark HighScoreInputDelegate Methods
+
+- (void)highScoreWasEntered:(HighScoreInputViewController *)controller {
+    [self dismissModalViewControllerAnimated:YES];
+    [mainChar removeFromSuperview];
+    gameOverButton.hidden = NO;
 }
 
 

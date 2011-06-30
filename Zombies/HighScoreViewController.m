@@ -2,8 +2,8 @@
 //  HighScoreViewController.m
 //  Zombies
 //
-//  Created by Developer on 6/20/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Ankit Tyagi on 6/20/11.
+//  Copyright 2011 Ankit Tyagi. All rights reserved.
 //
 
 #import "HighScoreViewController.h"
@@ -11,12 +11,13 @@
 @implementation HighScoreViewController
 
 @synthesize delegate = _delegate;
+@synthesize namesOfScores, actualScores, displayArray, highScoreData;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        highScoreData = [HighScoreSingletonData sharedHighScore];
     }
     return self;
 }
@@ -38,7 +39,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    displayArray = [[highScoreData tree] getSortedHighScores];
+    namesOfScores.lineBreakMode = UILineBreakModeWordWrap;
+    actualScores.lineBreakMode = UILineBreakModeWordWrap;
+    namesOfScores.numberOfLines = 10;
+    actualScores.numberOfLines = 10;
+    int i = 1;
+    NSString *nameString = [[NSString alloc] init];
+    NSString *scoreString = [[NSString alloc] init];
+    for (HighScoreData *highScores in displayArray) {
+        nameString = [nameString stringByAppendingFormat:@"%d. ", i];
+        nameString = [nameString stringByAppendingFormat:highScores.name];
+        nameString = [nameString stringByAppendingFormat:@"\n"];
+        scoreString = [scoreString stringByAppendingFormat:@"%d", highScores.score];
+        scoreString = [scoreString stringByAppendingFormat:@"\n"];
+        i = i + 1;
+    }
+    namesOfScores.text = nameString;
+    actualScores.text = scoreString;
 }
 
 - (void)viewDidUnload

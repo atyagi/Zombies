@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [speed setSelectedSegmentIndex:[defaults integerForKey:@"speedIndex"]];
 	// Do any additional setup after loading the view, typically from a nib.
