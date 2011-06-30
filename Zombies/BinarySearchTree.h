@@ -20,6 +20,7 @@
 -(BOOL)search:(HighScoreData*)value;
 -(void)remove:(HighScoreData*)value;
 -(BOOL)belongsInHighScores:(int)value;
+-(void)removeAll;
 
 -(void)printInOrder;
 -(void)printInOrder:(BSTNode*)node;

@@ -34,6 +34,15 @@
     [self.delegate highScoreViewDidFinish:self];
 }
 
+- (IBAction)resetHighScores:(id)sender {
+    [highScoreData.tree removeAll];
+    for (int i = 0; i < 10; i++) {
+        HighScoreData *data = [[HighScoreData alloc] initWithScore:0 andName:@"Player"];
+        [[highScoreData tree] insert:data];
+    }
+    [self showHighScores];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -44,6 +53,10 @@
     actualScores.lineBreakMode = UILineBreakModeWordWrap;
     namesOfScores.numberOfLines = 10;
     actualScores.numberOfLines = 10;
+    [self showHighScores];
+}
+
+- (void)showHighScores {
     int i = 1;
     NSString *nameString = [[NSString alloc] init];
     NSString *scoreString = [[NSString alloc] init];

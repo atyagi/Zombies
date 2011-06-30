@@ -31,6 +31,8 @@
 @property (strong) NSMutableArray *displayArray;
 
 - (IBAction)done:(id)sender;
+- (IBAction)resetHighScores:(id)sender;
+- (void)showHighScores;
 
 @end
 

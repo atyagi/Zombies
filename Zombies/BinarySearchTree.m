@@ -105,6 +105,11 @@
 	return false;  
 }
 
+- (void)removeAll {
+    root = nil;
+    return;
+}
+
 - (void)remove:(HighScoreData*)value {
     BSTNode *current = root;
 	BSTNode *parent = nil;
