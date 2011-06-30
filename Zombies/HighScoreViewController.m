@@ -36,6 +36,8 @@
 
 - (IBAction)resetHighScores:(id)sender {
     [highScoreData.tree removeAll];
+    namesOfScores.text = nil;
+    actualScores.text = nil;
     for (int i = 0; i < 10; i++) {
         HighScoreData *data = [[HighScoreData alloc] initWithScore:0 andName:@"Player"];
         [[highScoreData tree] insert:data];
@@ -48,7 +50,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    displayArray = [[highScoreData tree] getSortedHighScores];
     namesOfScores.lineBreakMode = UILineBreakModeWordWrap;
     actualScores.lineBreakMode = UILineBreakModeWordWrap;
     namesOfScores.numberOfLines = 10;
@@ -57,6 +58,7 @@
 }
 
 - (void)showHighScores {
+    displayArray = [[highScoreData tree] getSortedHighScores];
     int i = 1;
     NSString *nameString = [[NSString alloc] init];
     NSString *scoreString = [[NSString alloc] init];
