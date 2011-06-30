@@ -97,7 +97,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8B76D57D13B820ED000AA9F3 /* HighScoreTreeStructure */ = {
+		8B76D57D13B820ED000AA9F3 /* High Score Tree Structure */ = {
 			isa = PBXGroup;
 			children = (
 				8B76D57F13B82106000AA9F3 /* BSTNode.h */,
@@ -107,10 +107,10 @@
 				8B76D58313B82106000AA9F3 /* HighScoreData.h */,
 				8B76D58413B82106000AA9F3 /* HighScoreData.m */,
 			);
-			name = HighScoreTreeStructure;
+			name = "High Score Tree Structure";
 			sourceTree = "<group>";
 		};
-		8B76D58913B821A8000AA9F3 /* ViewControllers */ = {
+		8B76D58913B821A8000AA9F3 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				8B657C8A13AFFBBC00696939 /* ZombiesViewController.h */,
@@ -124,7 +124,7 @@
 				8BC317C913B012CE00208E41 /* HighScoreViewController.h */,
 				8BC317CA13B012CE00208E41 /* HighScoreViewController.m */,
 			);
-			name = ViewControllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		8B76D58A13B821D1000AA9F3 /* XIB Files */ = {
@@ -176,8 +176,8 @@
 				8BEBF45213AFA66C00805A3B /* Enemy.m */,
 				8B76D58B13B822AF000AA9F3 /* HighScoreSingletonData.h */,
 				8B76D58C13B822AF000AA9F3 /* HighScoreSingletonData.m */,
-				8B76D57D13B820ED000AA9F3 /* HighScoreTreeStructure */,
-				8B76D58913B821A8000AA9F3 /* ViewControllers */,
+				8B76D57D13B820ED000AA9F3 /* High Score Tree Structure */,
+				8B76D58913B821A8000AA9F3 /* View Controllers */,
 				8B76D58A13B821D1000AA9F3 /* XIB Files */,
 				8BEBF42713AFA57B00805A3B /* Supporting Files */,
 			);
