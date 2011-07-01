@@ -13,7 +13,7 @@
 @implementation FlipsideViewController
 
 @synthesize delegate = _delegate;
-@synthesize speed;
+@synthesize speed, direction;
 
 - (void)didReceiveMemoryWarning
 {
@@ -26,9 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [speed setSelectedSegmentIndex:[defaults integerForKey:@"speedIndex"]];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)viewDidUnload
@@ -46,15 +44,14 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:speed.selectedSegmentIndex forKey:@"speedIndex"];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:speed.selectedSegmentIndex forKey:@"speedIndex"];
+    [defaults setFloat:[speed value] forKey:@"sensitivityKey"];
+    [defaults setInteger:[direction selectedSegmentIndex] forKey:@"directionKey"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -74,16 +71,34 @@
 {
     [self.delegate flipsideViewControllerDidFinish:self];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setInteger:speed.selectedSegmentIndex forKey:@"speedIndex"];
+    [defaults setFloat:[speed value] forKey:@"sensitivityKey"];
+    [defaults setInteger:[direction selectedSegmentIndex] forKey:@"directionKey"];
 }
 
 - (IBAction)speedChanged:(id)sender 
 {
-    NSUserDefaults *speedAmount = [NSUserDefaults standardUserDefaults];
-    if (speed.selectedSegmentIndex == 0) [speedAmount setFloat:3.0 forKey:@"intSpeed"];
-    if (speed.selectedSegmentIndex == 1) [speedAmount setFloat:10.0 forKey:@"intSpeed"];
-    if (speed.selectedSegmentIndex == 2) [speedAmount setFloat:17.0 forKey:@"intSpeed"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setFloat:[speed value] forKey:@"sensitivityKey"];
 }
 
+- (IBAction)directionChanged:(id)sender 
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:[direction selectedSegmentIndex] forKey:@"directionKey"];
+}
+
+- (IBAction)changeTiltCalibration:(id)sender
+{
+    TiltCalibrationViewController *tiltCalibration = [[TiltCalibrationViewController alloc] initWithNibName:@"TiltCalibrationViewController" bundle:nil];
+    tiltCalibration.delegate = self;
+    tiltCalibration.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentModalViewController:tiltCalibration animated:YES];
+}
+
+#pragma mark - TiltCalibrationViewControllerDelegate methods
+
+- (void)tiltCalibrated:(TiltCalibrationViewController *)controller {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 @end

@@ -9,6 +9,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TiltCalibrationViewController.h"
 
 @class FlipsideViewController;
 
@@ -18,14 +19,20 @@
 
 @end
 
-@interface FlipsideViewController : UIViewController {
-    IBOutlet UISegmentedControl *speed;
+@interface FlipsideViewController : UIViewController 
+<TiltCalibrationViewControllerDelegate>
+{
+    IBOutlet UISlider *speed;
+    IBOutlet UISegmentedControl *direction;
 }
 
 @property (weak, nonatomic) IBOutlet id <FlipsideViewControllerDelegate> delegate;
-@property (nonatomic, retain) IBOutlet UISegmentedControl *speed;
+@property (nonatomic, strong) IBOutlet UISlider *speed;
+@property (nonatomic, strong) IBOutlet UISegmentedControl *direction;
 
 - (IBAction)done:(id)sender;
 - (IBAction)speedChanged:(id)sender;
+- (IBAction)directionChanged:(id)sender;
+- (IBAction)changeTiltCalibration:(id)sender;
 
 @end

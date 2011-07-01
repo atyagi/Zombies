@@ -18,6 +18,8 @@
 		8B76D58D13B822AF000AA9F3 /* HighScoreSingletonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D58C13B822AF000AA9F3 /* HighScoreSingletonData.m */; };
 		8BC317CC13B012CE00208E41 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC317CA13B012CE00208E41 /* HighScoreViewController.m */; };
 		8BC317CD13B012CE00208E41 /* HighScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC317CB13B012CE00208E41 /* HighScoreViewController.xib */; };
+		8BE73D8613BD8D8100EC3412 /* TiltCalibrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE73D8413BD8D8100EC3412 /* TiltCalibrationViewController.m */; };
+		8BE73D8713BD8D8100EC3412 /* TiltCalibrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BE73D8513BD8D8100EC3412 /* TiltCalibrationViewController.xib */; };
 		8BEBF42113AFA57B00805A3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42013AFA57B00805A3B /* UIKit.framework */; };
 		8BEBF42313AFA57B00805A3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42213AFA57B00805A3B /* Foundation.framework */; };
 		8BEBF42513AFA57B00805A3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEBF42413AFA57B00805A3B /* CoreGraphics.framework */; };
@@ -56,6 +58,9 @@
 		8BC317C913B012CE00208E41 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreViewController.h; sourceTree = "<group>"; };
 		8BC317CA13B012CE00208E41 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
 		8BC317CB13B012CE00208E41 /* HighScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HighScoreViewController.xib; sourceTree = "<group>"; };
+		8BE73D8313BD8D8100EC3412 /* TiltCalibrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TiltCalibrationViewController.h; sourceTree = "<group>"; };
+		8BE73D8413BD8D8100EC3412 /* TiltCalibrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiltCalibrationViewController.m; sourceTree = "<group>"; };
+		8BE73D8513BD8D8100EC3412 /* TiltCalibrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TiltCalibrationViewController.xib; sourceTree = "<group>"; };
 		8BEBF41C13AFA57B00805A3B /* Zombies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zombies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BEBF42013AFA57B00805A3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8BEBF42213AFA57B00805A3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +128,8 @@
 				8B1C716313B8FFB60012403B /* HighScoreInputViewController.m */,
 				8BC317C913B012CE00208E41 /* HighScoreViewController.h */,
 				8BC317CA13B012CE00208E41 /* HighScoreViewController.m */,
+				8BE73D8313BD8D8100EC3412 /* TiltCalibrationViewController.h */,
+				8BE73D8413BD8D8100EC3412 /* TiltCalibrationViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -135,6 +142,7 @@
 				8B657C8D13AFFC3D00696939 /* ZombiesViewController.xib */,
 				8BEBF44F13AFA64B00805A3B /* MainViewController.xib */,
 				8BEBF45D13AFDB0200805A3B /* FlipsideViewController.xib */,
+				8BE73D8513BD8D8100EC3412 /* TiltCalibrationViewController.xib */,
 			);
 			name = "XIB Files";
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 				8BC317CD13B012CE00208E41 /* HighScoreViewController.xib in Resources */,
 				8B1C716613B8FFB60012403B /* HighScoreInputViewController.xib in Resources */,
 				8B1C717113B99C780012403B /* background2.png in Resources */,
+				8BE73D8713BD8D8100EC3412 /* TiltCalibrationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +291,7 @@
 				8B76D58713B82106000AA9F3 /* HighScoreData.m in Sources */,
 				8B76D58D13B822AF000AA9F3 /* HighScoreSingletonData.m in Sources */,
 				8B1C716513B8FFB60012403B /* HighScoreInputViewController.m in Sources */,
+				8BE73D8613BD8D8100EC3412 /* TiltCalibrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

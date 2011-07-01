@@ -12,8 +12,10 @@
 
 @implementation MainViewController
 
-@synthesize x, y, speedRatio, scoreLabel, score, mainChar, menuButton, 
+@synthesize x, y, sensitivity, scoreLabel, score, mainChar, menuButton, gamePaused, 
     enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
+
+@synthesize xAccel, yAccel, zAccel;
 
 - (void)didReceiveMemoryWarning
 {
@@ -53,7 +55,9 @@
 
 - (void)runTimeRemaining {
     @synchronized(self) {
-        timeLeft = timeLeft - 1;
+        if (!gamePaused) {
+            timeLeft = timeLeft - 1;
+        }
         timeLeftLabel.text = [[NSString alloc] initWithFormat:@"%d", timeLeft];
     }
     if (timeLeft > 0) {
@@ -90,8 +94,8 @@
     else if (mainChar.center.y > 480)
         location.y = 1;
     else {
-        location.x = location.x + speedRatio * x;
-        location.y = location.y - speedRatio * y;
+        location.x = location.x + x;
+        location.y = location.y - y;
     }
     
     return location;
@@ -101,16 +105,30 @@
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
     if (!timeIsUp) {
-        //Sets accelerometer data
-        x = acceleration.x;
-        y = acceleration.y;
+        float direction = 1;
         
         //Sets speed from FlipsideViewController
-        NSUserDefaults *speedDefaults = [NSUserDefaults standardUserDefaults];
-        if ([speedDefaults floatForKey:@"intSpeed"] != 0.0f) 
-            speedRatio = [speedDefaults floatForKey:@"intSpeed"];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if ([defaults floatForKey:@"sensitivityKey"] != 0.0f) 
+            sensitivity = [defaults floatForKey:@"sensitivityKey"];
         else 
-            speedRatio = 10.0f;
+            sensitivity = 10.0f;
+        
+        if ([defaults integerForKey:@"directionKey"] == 1) 
+            direction = -1;
+        else if ([defaults integerForKey:@"directionKey"] == 0)
+            direction = 1;
+        
+        double calibrationX = [defaults doubleForKey:@"calibrationXKey"];
+        double offsetX = calibrationX * (sensitivity * (direction * -1));
+        
+        double calibrationY = [defaults doubleForKey:@"calibrationYKey"];
+        double offsetY = calibrationY * (sensitivity * (direction * -1));
+        
+        //Sets new x and y values based on accelerometer and
+        //settings from settings view
+        x = (acceleration.x * direction * sensitivity) + offsetX;
+        y = (acceleration.y * direction * sensitivity) + offsetY;
         
         //Start animation
         [UIView beginAnimations:nil context:NULL];
@@ -219,6 +237,8 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
+    accel.delegate = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -248,16 +268,36 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark Actions 
+
 - (IBAction)showMenu:(id)sender {
     [self gameOver:sender];
 }
 
-#pragma Mark HighScoreInputDelegate Methods
+- (IBAction)showSettings:(id)sender {
+    UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
+    accel.delegate = nil;
+    gamePaused = YES;
+    FlipsideViewController *settingsView = [[FlipsideViewController alloc] initWithNibName:@"FlipsideViewController" bundle:nil];
+    settingsView.delegate = self;
+    settingsView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentModalViewController:settingsView animated:YES];
+}
+
+#pragma mark HighScoreInputDelegate Methods
 
 - (void)highScoreWasEntered:(HighScoreInputViewController *)controller {
     [self dismissModalViewControllerAnimated:YES];
     [mainChar removeFromSuperview];
     gameOverButton.hidden = NO;
+}
+
+#pragma mark FlipsideViewControllerDelegate methods
+
+- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
+    [self dismissModalViewControllerAnimated:YES];
+    UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
+    accel.delegate = self;
 }
 
 
