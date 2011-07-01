@@ -13,7 +13,7 @@
 @implementation MainViewController
 
 @synthesize x, y, sensitivity, scoreLabel, score, mainChar, menuButton, gamePaused, 
-    enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
+enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 
 @synthesize xAccel, yAccel, zAccel;
 
@@ -208,13 +208,15 @@
     accel.updateInterval = 1.0f/30.0f;
     
     enemyList = [[NSMutableArray alloc] init];
-    for (int i = 0; i < 7; i++)
-    {
-        Enemy *newEnemy = [[Enemy alloc] initWithImage:[UIImage imageNamed:@"person.png"]];
-        newEnemy.center = CGPointMake((arc4random() % 300) + 20, 419);
-        newEnemy.myDirection = UP;
-        [enemyList addObject:newEnemy];
-        [self.view addSubview:newEnemy];
+    @autoreleasepool {
+        for (int i = 0; i < 7; i++)
+        {
+            Enemy *newEnemy = [[Enemy alloc] initWithImage:[UIImage imageNamed:@"person.png"]];
+            newEnemy.center = CGPointMake((arc4random() % 300) + 20, 419);
+            newEnemy.myDirection = UP;
+            [enemyList addObject:newEnemy];
+            [self.view addSubview:newEnemy];
+        }
     }
     
     [NSThread detachNewThreadSelector:@selector(backgroundMoveEnemy) 

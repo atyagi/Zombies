@@ -31,10 +31,12 @@ static HighScoreSingletonData *sharedHighScore;
             }
             else {
                 sharedHighScore = [[HighScoreSingletonData alloc] init];
-                for (int i = 0; i < 10; i++) {
-                    HighScoreData *data = [[HighScoreData alloc] initWithScore:0 andName:@"Player"];
-                    [[sharedHighScore tree] insert:data];
-
+                @autoreleasepool {
+                    for (int i = 0; i < 10; i++) {
+                        HighScoreData *data = [[HighScoreData alloc] initWithScore:0 andName:@"Player"];
+                        [[sharedHighScore tree] insert:data];
+                        
+                    }
                 }
             }
         }
