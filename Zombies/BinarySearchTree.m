@@ -84,9 +84,10 @@
 - (BOOL)belongsInHighScores:(int)value {
     BSTNode* current = root;
     while (current.left != nil) {
-        if (value <= current.data.score) {
-            return NO;
-        }
+        current = current.left;
+    }
+    if (value <= current.data.score) {
+        return NO;
     }
     return YES;
 }
