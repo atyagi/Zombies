@@ -93,8 +93,4 @@ static HighScoreSingletonData *sharedHighScore;
     return self;
 }
 
-//Code Snippets
-/*BOOL success = [NSKeyedArchiver archiveRootObject:saveArray toFile:filePath];
- NSLog(@"Did saving work: %s", success ? "YES" : "NO");*/
-
 @end
