@@ -17,7 +17,9 @@
 
 @end
 
-@interface HighScoreInputViewController : UIViewController {
+@interface HighScoreInputViewController : UIViewController 
+<UITextFieldDelegate>
+{
     int newScore;
     HighScoreSingletonData *highScoresData;
     IBOutlet UILabel *scoreLabel;
