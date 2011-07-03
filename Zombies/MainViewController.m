@@ -300,6 +300,7 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
     [self dismissModalViewControllerAnimated:YES];
     UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
     accel.delegate = self;
+    gamePaused = NO;
 }
 
 
