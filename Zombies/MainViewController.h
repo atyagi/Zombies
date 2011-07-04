@@ -30,7 +30,6 @@
     IBOutlet UILabel *timeLeftLabel;
     IBOutlet UIButton *menuButton;
     int score;
-    float sensitivity;
     double x;
     double y;
     CGPoint standardPosition;
@@ -45,6 +44,10 @@
 }
 
 - (void)backgroundMoveEnemy;
+- (void)backgroundDoTimeRemaining;
+- (void)backgroundMoveBonusTime;
+- (CGPoint)moveToThisLocation:(CGPoint)location;
+- (void)runTimeRemaining;
 - (BOOL)viewCollides:(UIView*)view1 withView:(UIView*)view2;
 - (IBAction)gameOver:(id)sender;
 - (IBAction)showMenu:(id)sender;
@@ -57,7 +60,6 @@
 @property (strong) UILabel *timeLeftLabel;
 @property (strong) UIImageView *mainChar;
 @property (strong) NSMutableArray *enemyList;
-@property float sensitivity;
 @property int score;
 @property int timeLeft;
 @property double x;

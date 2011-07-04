@@ -12,7 +12,7 @@
 
 @implementation MainViewController
 
-@synthesize x, y, sensitivity, scoreLabel, score, mainChar, menuButton, gamePaused, 
+@synthesize x, y, scoreLabel, score, mainChar, menuButton, gamePaused, 
 enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 
 @synthesize xAccel, yAccel, zAccel;
@@ -28,6 +28,14 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
         return YES;
     }
     return NO;
+}
+
+#pragma mark MoveEnemy thread methods
+
+- (void)backgroundMoveEnemy {
+    [self performSelectorOnMainThread:@selector(moveEnemy) 
+                           withObject:nil 
+                        waitUntilDone:NO]; 
 }
 
 - (void)moveEnemy {
@@ -53,10 +61,23 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
     }
 }
 
+#pragma mark Timer thread methods
+
+- (void)backgroundDoTimeRemaining {
+    [self performSelectorOnMainThread:@selector(runTimeRemaining) 
+                           withObject:nil 
+                        waitUntilDone:NO];
+}
+
 - (void)runTimeRemaining {
     @synchronized(self) {
         if (!gamePaused) {
             timeLeft = timeLeft - 1;
+            if ((arc4random() % 100) > 70) {
+                [NSThread detachNewThreadSelector:@selector(backgroundMoveBonusTime) 
+                                         toTarget:self 
+                                       withObject:nil];
+            }
         }
         timeLeftLabel.text = [[NSString alloc] initWithFormat:@"%d", timeLeft];
     }
@@ -72,16 +93,8 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
     }
 }
 
-- (void)backgroundMoveEnemy {
-    [self performSelectorOnMainThread:@selector(moveEnemy) 
-                           withObject:nil 
-                        waitUntilDone:NO]; 
-}
-
-- (void)backgroundDoTimeRemaining {
-    [self performSelectorOnMainThread:@selector(runTimeRemaining) 
-                           withObject:nil 
-                        waitUntilDone:NO];
+- (void)backgroundMoveBonusTime {
+    
 }
 
 - (CGPoint)moveToThisLocation:(CGPoint)location {
@@ -101,18 +114,18 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
     return location;
 }
 
+#pragma mark UIAccelerometerDelegate methods
 
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
     if (!timeIsUp) {
+        //Get tilt settings from FlipsideViewController saved via NSUserDefaults
         float direction = 1;
+        float sensitivity = 10.0f;
         
-        //Sets speed from FlipsideViewController
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ([defaults floatForKey:@"sensitivityKey"] != 0.0f) 
             sensitivity = [defaults floatForKey:@"sensitivityKey"];
-        else 
-            sensitivity = 10.0f;
         
         if ([defaults integerForKey:@"directionKey"] == 1) 
             direction = -1;
@@ -169,7 +182,7 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
                 }
             }
         }
-        
+    
         scoreLabel.text = [[NSString alloc] initWithFormat:@"Score: %d", score];
         
     }
@@ -246,6 +259,7 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 - (void)viewWillAppear:(BOOL)animated
 {
     mainChar.center = standardPosition;
+    gamePaused = NO;
     [super viewWillAppear:animated];
 }
 
@@ -257,6 +271,9 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
+    gamePaused = YES;
+    UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
+    accel.delegate = nil;
 }
 
 - (void)viewDidDisappear:(BOOL)animated
