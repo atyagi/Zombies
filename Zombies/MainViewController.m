@@ -15,8 +15,6 @@
 @synthesize x, y, scoreLabel, score, mainChar, menuButton, gamePaused, 
 enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 
-@synthesize xAccel, yAccel, zAccel;
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -94,6 +92,12 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 }
 
 - (void)backgroundMoveBonusTime {
+    [self performSelectorOnMainThread:@selector(runMoveBonusTime) 
+                           withObject:nil 
+                        waitUntilDone:NO];
+}
+
+- (void)runMoveBonusTime {
     
 }
 
@@ -244,7 +248,7 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
     timeLeft = 60;
     timeIsUp = NO;
     
-    standardPosition = mainChar.center;
+    defaultMainCharPosition = mainChar.center;
 }
 
 - (void)viewDidUnload
@@ -258,7 +262,7 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    mainChar.center = standardPosition;
+    mainChar.center = defaultMainCharPosition;
     gamePaused = NO;
     [super viewWillAppear:animated];
 }

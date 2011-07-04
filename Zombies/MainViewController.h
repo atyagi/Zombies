@@ -32,15 +32,11 @@
     int score;
     double x;
     double y;
-    CGPoint standardPosition;
+    CGPoint defaultMainCharPosition;
     NSMutableArray *enemyList;
     int timeLeft;
     BOOL timeIsUp;
     BOOL gamePaused;
-    
-    IBOutlet UILabel *xAccel;
-    IBOutlet UILabel *yAccel;
-    IBOutlet UILabel *zAccel;
 }
 
 - (void)backgroundMoveEnemy;
@@ -48,27 +44,24 @@
 - (void)backgroundMoveBonusTime;
 - (CGPoint)moveToThisLocation:(CGPoint)location;
 - (void)runTimeRemaining;
+- (void)runMoveBonusTime;
 - (BOOL)viewCollides:(UIView*)view1 withView:(UIView*)view2;
 - (IBAction)gameOver:(id)sender;
 - (IBAction)showMenu:(id)sender;
 - (IBAction)showSettings:(id)sender;
 
 @property (weak, nonatomic) IBOutlet id <MainViewControllerDelegate> delegate;
-@property (strong) UILabel *scoreLabel;
 @property (strong) UIButton *gameOverButton;
-@property (strong) UIButton *menuButton;
-@property (strong) UILabel *timeLeftLabel;
+@property (strong) UILabel *scoreLabel;
 @property (strong) UIImageView *mainChar;
-@property (strong) NSMutableArray *enemyList;
+@property (strong) UILabel *timeLeftLabel;
+@property (strong) UIButton *menuButton;
 @property int score;
-@property int timeLeft;
 @property double x;
 @property double y;
+@property (strong) NSMutableArray *enemyList;
+@property int timeLeft;
 @property BOOL timeIsUp;
 @property BOOL gamePaused;
-
-@property (strong) UILabel *xAccel;
-@property (strong) UILabel *yAccel;
-@property (strong) UILabel *zAccel;
 
 @end
