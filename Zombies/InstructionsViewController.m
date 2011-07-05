@@ -17,7 +17,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
+
     }
     return self;
 }
@@ -29,14 +29,13 @@
 - (void)setupPage {
     scrollView.delegate = self;
     
-	[self.scrollView setBackgroundColor:[UIColor blackColor]];
-	[scrollView setCanCancelContentTouches:NO];
-	
-	scrollView.indicatorStyle = UIScrollViewIndicatorStyleBlack;
-	scrollView.clipsToBounds = YES;
-	scrollView.scrollEnabled = YES;
-	scrollView.pagingEnabled = YES;
-	
+    [self.scrollView setBackgroundColor:[UIColor blackColor]];
+    [scrollView setCanCancelContentTouches:NO];
+    
+    scrollView.clipsToBounds = YES;
+    scrollView.scrollEnabled = YES;
+    scrollView.pagingEnabled = YES;
+    
 	int nimages = 1;
 	CGFloat cx = 0;
 	for (int i = 0; i < 3; i++) {
@@ -61,7 +60,7 @@
         nimages++;
 	}
 	
-	self.pageControl.numberOfPages = nimages;
+	self.pageControl.numberOfPages = 3;
 	[scrollView setContentSize:CGSizeMake(cx, [scrollView bounds].size.height)];
 }
 
@@ -78,8 +77,9 @@
 #pragma mark UIScrollViewDelegate methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)passedScrollView {
-    if (pageControlIsChangingPage) 
+    if (pageControlIsChangingPage) {
         return;
+    }
     
     CGFloat pageWidth = passedScrollView.frame.size.width;
     int page = floor((passedScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
