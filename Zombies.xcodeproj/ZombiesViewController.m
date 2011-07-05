@@ -51,6 +51,13 @@
 
 }
 
+- (IBAction)viewInstructions:(id)sender {
+    InstructionsViewController *instructionsView = [[InstructionsViewController alloc] initWithNibName:@"InstructionsViewController" bundle:nil];
+    instructionsView.delegate = self;
+    instructionsView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentModalViewController:instructionsView animated:YES];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -87,6 +94,12 @@
 #pragma mark - HighScoreViewControllerDelegate
 
 - (void)highScoreViewDidFinish:(HighScoreViewController *)controller {
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - InstructionsViewControllerDelegate
+
+- (void)instructionsViewFinished:(InstructionsViewController *)controller {
     [self dismissModalViewControllerAnimated:YES];
 }
 

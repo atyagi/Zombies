@@ -12,9 +12,10 @@
 #import "MainViewController.h"
 #import "FlipsideViewController.h"
 #import "HighScoreViewController.h"
+#import "InstructionsViewController.h"
 
 @interface ZombiesViewController : UIViewController 
-<MainViewControllerDelegate, FlipsideViewControllerDelegate, HighScoreViewControllerDelegate>
+<MainViewControllerDelegate, FlipsideViewControllerDelegate, HighScoreViewControllerDelegate, InstructionsViewControllerDelegate>
 {
     
 }
@@ -22,6 +23,6 @@
 -(IBAction)playGame:(id)sender;
 -(IBAction)viewSettings:(id)sender;
 -(IBAction)viewHighScores:(id)sender;
-
+-(IBAction)viewInstructions:(id)sender;
 
 @end

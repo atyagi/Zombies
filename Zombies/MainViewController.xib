@@ -135,7 +135,7 @@
 					<object class="IBUILabel" id="187409276">
 						<reference key="NSNextResponder" ref="883825266"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{134, 419}, {42, 21}}</string>
+						<string key="NSFrame">{{134, 439}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="707939314"/>
@@ -356,10 +356,10 @@
 							<reference ref="745251836"/>
 							<reference ref="168293185"/>
 							<reference ref="199766178"/>
-							<reference ref="187409276"/>
 							<reference ref="773185964"/>
 							<reference ref="707939314"/>
 							<reference ref="851331886"/>
+							<reference ref="187409276"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -509,9 +509,6 @@
 							<string>menuButton</string>
 							<string>scoreLabel</string>
 							<string>timeLeftLabel</string>
-							<string>xAccel</string>
-							<string>yAccel</string>
-							<string>zAccel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -519,9 +516,6 @@
 							<string>UIButton</string>
 							<string>UIImageView</string>
 							<string>UIButton</string>
-							<string>UILabel</string>
-							<string>UILabel</string>
-							<string>UILabel</string>
 							<string>UILabel</string>
 							<string>UILabel</string>
 						</object>
@@ -536,9 +530,6 @@
 							<string>menuButton</string>
 							<string>scoreLabel</string>
 							<string>timeLeftLabel</string>
-							<string>xAccel</string>
-							<string>yAccel</string>
-							<string>zAccel</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -564,18 +555,6 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">timeLeftLabel</string>
-								<string key="candidateClassName">UILabel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">xAccel</string>
-								<string key="candidateClassName">UILabel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">yAccel</string>
-								<string key="candidateClassName">UILabel</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">zAccel</string>
 								<string key="candidateClassName">UILabel</string>
 							</object>
 						</object>
