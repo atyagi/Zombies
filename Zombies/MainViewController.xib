@@ -43,7 +43,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIImageView" id="168293185">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 480}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
@@ -58,8 +58,8 @@
 					</object>
 					<object class="IBUILabel" id="12983909">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 20}, {280, 21}}</string>
+						<int key="NSvFlags">300</int>
+						<string key="NSFrame">{{20, 20}, {217, 21}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="773185964"/>
@@ -105,7 +105,7 @@
 					</object>
 					<object class="IBUILabel" id="199766178">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">300</int>
 						<string key="NSFrame">{{20, 439}, {106, 21}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
@@ -134,7 +134,7 @@
 					</object>
 					<object class="IBUILabel" id="187409276">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">300</int>
 						<string key="NSFrame">{{134, 439}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
@@ -154,7 +154,7 @@
 					</object>
 					<object class="IBUIButton" id="773185964">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">-2147483356</int>
+						<int key="NSvFlags">-2147483347</int>
 						<string key="NSFrame">{{59, 141}, {203, 177}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
@@ -187,7 +187,7 @@
 					</object>
 					<object class="IBUIButton" id="707939314">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">289</int>
 						<string key="NSFrame">{{245, 16}, {55, 29}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
@@ -214,7 +214,7 @@
 					</object>
 					<object class="IBUIButton" id="851331886">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">297</int>
 						<string key="NSFrame">{{282, 440}, {18, 19}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
@@ -354,12 +354,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="12983909"/>
 							<reference ref="745251836"/>
-							<reference ref="168293185"/>
 							<reference ref="199766178"/>
 							<reference ref="773185964"/>
 							<reference ref="707939314"/>
 							<reference ref="851331886"/>
 							<reference ref="187409276"/>
+							<reference ref="168293185"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
