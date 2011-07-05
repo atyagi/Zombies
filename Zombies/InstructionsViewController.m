@@ -2,8 +2,8 @@
 //  InstructionsViewController.m
 //  Zombies
 //
-//  Created by Developer on 7/4/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Ankit Tyagi on 7/4/11.
+//  Copyright 2011 Ankit Tyagi. All rights reserved.
 //
 
 #import "InstructionsViewController.h"
