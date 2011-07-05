@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    speed.value = [defaults floatForKey:@"sensitivityKey"];
+    direction.selectedSegmentIndex = [defaults integerForKey:@"directionKey"];
+    
 }
 
 - (void)viewDidUnload
@@ -34,6 +38,9 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setFloat:[speed value] forKey:@"sensitivityKey"];
+    [defaults setInteger:[direction selectedSegmentIndex] forKey:@"directionKey"];
 }
 
 - (void)viewWillAppear:(BOOL)animated
