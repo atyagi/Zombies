@@ -22,7 +22,7 @@
     return self;
 }
 
-- (void)moveEnemyUp {
+-(void)moveEnemyUp {
     CGPoint pos = self.center;
     if (pos.y < 1)
         pos.y = 479;

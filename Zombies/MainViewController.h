@@ -37,6 +37,9 @@
     int timeLeft;
     BOOL timeIsUp;
     BOOL gamePaused;
+    BOOL bonusGiven;
+    int bonusTimeRepeats;
+    UIImageView *bonusTime;
 }
 
 - (void)backgroundMoveEnemy;
@@ -57,11 +60,5 @@
 @property (strong) UILabel *timeLeftLabel;
 @property (strong) UIButton *menuButton;
 @property int score;
-@property double x;
-@property double y;
-@property (strong) NSMutableArray *enemyList;
-@property int timeLeft;
-@property BOOL timeIsUp;
-@property BOOL gamePaused;
 
 @end

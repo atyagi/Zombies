@@ -21,6 +21,7 @@
 		8B76D58613B82106000AA9F3 /* BinarySearchTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D58213B82106000AA9F3 /* BinarySearchTree.m */; };
 		8B76D58713B82106000AA9F3 /* HighScoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D58413B82106000AA9F3 /* HighScoreData.m */; };
 		8B76D58D13B822AF000AA9F3 /* HighScoreSingletonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D58C13B822AF000AA9F3 /* HighScoreSingletonData.m */; };
+		8BB6A23613C3C257009575F9 /* bonusTime.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6A23513C3C257009575F9 /* bonusTime.png */; };
 		8BC317CC13B012CE00208E41 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC317CA13B012CE00208E41 /* HighScoreViewController.m */; };
 		8BC317CD13B012CE00208E41 /* HighScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC317CB13B012CE00208E41 /* HighScoreViewController.xib */; };
 		8BE73D8613BD8D8100EC3412 /* TiltCalibrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE73D8413BD8D8100EC3412 /* TiltCalibrationViewController.m */; };
@@ -67,6 +68,7 @@
 		8B76D58413B82106000AA9F3 /* HighScoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreData.m; sourceTree = "<group>"; };
 		8B76D58B13B822AF000AA9F3 /* HighScoreSingletonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreSingletonData.h; path = Zombies.xcodeproj/HighScoreSingletonData.h; sourceTree = SOURCE_ROOT; };
 		8B76D58C13B822AF000AA9F3 /* HighScoreSingletonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreSingletonData.m; path = Zombies.xcodeproj/HighScoreSingletonData.m; sourceTree = SOURCE_ROOT; };
+		8BB6A23513C3C257009575F9 /* bonusTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonusTime.png; sourceTree = "<group>"; };
 		8BC317C913B012CE00208E41 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreViewController.h; sourceTree = "<group>"; };
 		8BC317CA13B012CE00208E41 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
 		8BC317CB13B012CE00208E41 /* HighScoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HighScoreViewController.xib; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				8B4E14AE13C25EF6005AEA13 /* instructions3.png */,
 				8B1C717013B99C780012403B /* background2.png */,
 				8BEBF44A13AFA5E000805A3B /* Icon@2x.png */,
+				8BB6A23513C3C257009575F9 /* bonusTime.png */,
 				8BEBF44013AFA5CD00805A3B /* background.png */,
 				8BFCE9B613C01741004329BF /* menuBackground.png */,
 				8BEBF44113AFA5CD00805A3B /* Default@2x.png */,
@@ -294,6 +297,7 @@
 				8B4E14B013C25EF6005AEA13 /* instructions1.png in Resources */,
 				8B4E14B113C25EF6005AEA13 /* instructions3.png in Resources */,
 				8B4E14B213C25EF6005AEA13 /* instructions2.png in Resources */,
+				8BB6A23613C3C257009575F9 /* bonusTime.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,8 +12,7 @@
 
 @implementation MainViewController
 
-@synthesize x, y, scoreLabel, score, mainChar, menuButton, gamePaused, 
-enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
+@synthesize scoreLabel, score, mainChar, menuButton, timeLeftLabel, gameOverButton, delegate;
 
 - (void)didReceiveMemoryWarning
 {
@@ -71,9 +70,11 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
     @synchronized(self) {
         if (!gamePaused) {
             timeLeft = timeLeft - 1;
-            if ((arc4random() % 100) > 70) {
+            if ((arc4random() % 60) > 57 && !bonusGiven) {
+                bonusGiven = YES;
+                bonusTimeRepeats = 0;
                 [NSThread detachNewThreadSelector:@selector(backgroundMoveBonusTime) 
-                                         toTarget:self 
+                                         toTarget:self
                                        withObject:nil];
             }
         }
@@ -92,12 +93,60 @@ enemyList, timeLeftLabel, timeLeft, timeIsUp, gameOverButton, delegate;
 }
 
 - (void)backgroundMoveBonusTime {
+    bonusTime = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bonusTime.png"]];
+    [bonusTime setAnimationDuration:1.0];
+    [bonusTime setAnimationRepeatCount:10];
+    bonusTime.center = CGPointMake((arc4random() % 320), (arc4random() % 480));
+    [self.view addSubview:bonusTime];
     [self performSelectorOnMainThread:@selector(runMoveBonusTime) 
                            withObject:nil 
                         waitUntilDone:NO];
 }
 
 - (void)runMoveBonusTime {
+    bonusTimeRepeats++;
+    
+    CGPoint pos = bonusTime.center;
+    int direction = (arc4random() % 4) + 1;
+    switch (direction) {
+        case 1:
+            pos.x = pos.x + 1;
+            pos.y = pos.y + 1;
+            break;
+        case 2:
+            pos.x = pos.x - 1;
+            pos.y = pos.y + 1;
+            break;
+        case 3:
+            pos.x = pos.x + 1;
+            pos.y = pos.y - 1;
+            break;
+        case 4:
+            pos.x = pos.x - 1;
+            pos.y = pos.y - 1;
+        default:
+            pos.x = pos.x + 1;
+            pos.y = pos.y + 1;
+            break;
+    }
+    bonusTime.center = pos;
+    
+    if (![self viewCollides:mainChar withView:bonusTime]) {
+        if (bonusTimeRepeats != 150) {
+            [NSTimer scheduledTimerWithTimeInterval:.04 
+                                             target:self 
+                                           selector:@selector(runMoveBonusTime) 
+                                           userInfo:nil 
+                                            repeats:NO];
+        }
+        else {
+            [bonusTime removeFromSuperview];
+        }
+    }
+    else {
+        timeLeft = timeLeft + 5;
+        [bonusTime removeFromSuperview];
+    }
     
 }
 
