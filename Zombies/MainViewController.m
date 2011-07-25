@@ -172,10 +172,11 @@
 - (void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
 {
     if (!timeIsUp) {
-        //Get tilt settings from FlipsideViewController saved via NSUserDefaults
+        //Defaults if NSUserDefaults aren't declared
         float direction = 1;
         float sensitivity = 10.0f;
         
+        //Get values needed for setting movement from NSUserDefaults
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ([defaults floatForKey:@"sensitivityKey"] != 0.0f) 
             sensitivity = [defaults floatForKey:@"sensitivityKey"];
