@@ -29,7 +29,7 @@
     IBOutlet UIImageView *mainChar;
     IBOutlet UILabel *timeLeftLabel;
     IBOutlet UIButton *menuButton;
-    int score;
+    int64_t score;
     double x;
     double y;
     CGPoint defaultMainCharPosition;
@@ -59,6 +59,6 @@
 @property (strong) UIImageView *mainChar;
 @property (strong) UILabel *timeLeftLabel;
 @property (strong) UIButton *menuButton;
-@property int score;
+@property int64_t score;
 
 @end

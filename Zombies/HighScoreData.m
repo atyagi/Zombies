@@ -10,7 +10,7 @@
 
 @implementation HighScoreData
 
-@synthesize score, name;
+@synthesize score, name, dateEarned;
 
 - (id)init
 {
@@ -28,6 +28,7 @@
     if (self) {
         score = passedScore;
         name = passedName;
+        dateEarned = [NSDate date];
     }
     
     return self;
@@ -38,17 +39,19 @@
     if (!self) return nil;
     score = [aDecoder decodeInt32ForKey:@"scoreKey"];
     name = [aDecoder decodeObjectForKey:@"nameKey"];
+    dateEarned = [aDecoder decodeObjectForKey:@"dateKey"];
     return self;
 }
 
 - (NSString*)scoreString {
-    return [NSString stringWithFormat:@"%@: %d", name, score];
+    return [NSString stringWithFormat:@"%@: %d on %@", name, score, dateEarned];
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeDouble:versionNumber forKey:@"versionKey"];
     [aCoder encodeInt32:score forKey:@"scoreKey"];
     [aCoder encodeObject:name forKey:@"nameKey"];
+    [aCoder encodeObject:dateEarned forKey:@"dateKey"];
 }
 
 @end

@@ -23,7 +23,7 @@
     self.viewController = [[ZombiesViewController alloc] initWithNibName:@"ZombiesViewController" bundle:nil]; 
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-    [HighScoreSingletonData sharedHighScore];
+    
     //NSLog(@"Did finish launching");
     return YES;
 }
@@ -34,7 +34,7 @@
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
-    HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScore];
+    HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScoreData];
     [highScores saveHighScores];
     //NSLog(@"Resigning active state");
 }
@@ -45,7 +45,7 @@
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
-    HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScore];
+    HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScoreData];
     [highScores saveHighScores];
     //NSLog(@"Did enter background");
 }
@@ -73,7 +73,7 @@
      Save data if appropriate.
      See also applicationDidEnterBackground:.
      */
-    HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScore];
+    HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScoreData];
     [highScores saveHighScores];
     //NSLog(@"Will terminate");
 }

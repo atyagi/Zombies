@@ -64,6 +64,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //If Game Center is available and...
+    if ([GameCenterManager isGameCenterAvailable]) {
+        //If local player is not authenticated
+        if (! [GKLocalPlayer localPlayer].isAuthenticated)
+        {
+            [[GameCenterManager sharedGameCenterManager] authenticateLocalUser];
+        }
+    }
+    else {
+        NSLog(@"Game Center isn't available on this device");
+    }
 }
 
 - (void)viewDidUnload

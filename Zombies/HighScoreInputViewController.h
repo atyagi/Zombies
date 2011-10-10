@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HighScoreSingletonData.h"
+#import "GameCenterManager.h"
+#import <GameKit/GameKit.h>
 
 @class HighScoreInputViewController;
 
@@ -18,20 +20,27 @@
 @end
 
 @interface HighScoreInputViewController : UIViewController 
-<UITextFieldDelegate>
+<UITextFieldDelegate, GKLeaderboardViewControllerDelegate, GameCenterManagerDelegate>
 {
-    int newScore;
+    int64_t newScore;
     HighScoreSingletonData *highScoresData;
     IBOutlet UILabel *scoreLabel;
     IBOutlet UITextField *nameInput;
+    IBOutlet UIButton *submitButton;
+    
+    NSString* currentLeaderBoard;    
 }
 
 @property (weak) IBOutlet id <HighScoreInputViewControllerDelegate> delegate;
 @property (strong) IBOutlet UILabel *scoreLabel;
 @property (strong) IBOutlet UITextField *nameInput;
-@property int newScore;
+@property (strong) IBOutlet UIButton *submitButton;
+@property int64_t newScore;
+@property (nonatomic, strong) NSString* currentLeaderBoard;
 
 - (IBAction)makeKeyboardGoAway:(id)sender;
 - (IBAction)storeScore:(id)sender;
+- (IBAction)goBack:(id)sender;
+- (void)showLeaderboard;
 
 @end

@@ -244,7 +244,7 @@
         UIAccelerometer *accel = [UIAccelerometer sharedAccelerometer];
         accel.delegate = nil;
         menuButton.hidden = YES;
-        HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScore];
+        HighScoreSingletonData *highScores = [HighScoreSingletonData sharedHighScoreData];
         if ([highScores.tree belongsInHighScores:score]) {
             HighScoreInputViewController *highScoreInputViewController = [[HighScoreInputViewController alloc] initWithNibName:@"HighScoreInputViewController" bundle:nil];
             highScoreInputViewController.delegate = self;
@@ -295,7 +295,7 @@
                            withObject:nil];
     
     score = 0;
-    timeLeft = 60;
+    timeLeft = 20;
     timeIsUp = NO;
     
     defaultMainCharPosition = mainChar.center;

@@ -65,18 +65,17 @@
             else
                 current.left = newNode;
         }
-        count = count + 1;
+        count++;
         return;
     }
     else {
         while (current.left != nil) {
-            //if (value.score <= current.data.score) {
-            //    return;
-            //}
             current = current.left;
         }
-        [self remove:current.data];
-        [self insert:value];
+        if (value.score >= current.data.score) {
+            [self remove:current.data];
+            [self insert:value];
+        }
         return;
     }
 }
@@ -107,8 +106,10 @@
 }
 
 - (void)removeAll {
-    root = nil;
-    return;
+    @autoreleasepool {
+        root = nil;
+        return;
+    }
 }
 
 - (void)remove:(HighScoreData*)value {
@@ -159,12 +160,12 @@
 			current = current.right;
 		}
 	}
-    count = count - 1;
+    count--;
 	return;
 }
 
 /*
- Returns the array in greatest to smallest
+ Returns the array from largest to smallest
  */
 - (NSMutableArray*)getSortedHighScores {
     @synchronized(self) {
@@ -213,7 +214,7 @@
 
 - (void)printPostOrder
 {
-    [self printPostOrder];
+    [self printPostOrder:root];
 }
 
 - (void)printPostOrder:(BSTNode*)node

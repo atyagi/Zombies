@@ -17,10 +17,12 @@ const static double versionNumber = 1.0;
 {
     NSString *name;
     int score;
+    NSDate *dateEarned;
 }
 
 @property int score;
 @property (strong) NSString *name;
+@property (strong) NSDate *dateEarned;
 
 - (id)initWithScore:(int)passedScore andName:(NSString*)passedName;
 - (NSString*)scoreString;

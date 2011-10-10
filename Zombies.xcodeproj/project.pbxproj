@@ -21,6 +21,7 @@
 		8B76D58613B82106000AA9F3 /* BinarySearchTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D58213B82106000AA9F3 /* BinarySearchTree.m */; };
 		8B76D58713B82106000AA9F3 /* HighScoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D58413B82106000AA9F3 /* HighScoreData.m */; };
 		8B76D58D13B822AF000AA9F3 /* HighScoreSingletonData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B76D58C13B822AF000AA9F3 /* HighScoreSingletonData.m */; };
+		8BA2045B13E5107500124426 /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BA2045A13E5107400124426 /* GameCenterManager.m */; };
 		8BB6A23613C3C257009575F9 /* bonusTime.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BB6A23513C3C257009575F9 /* bonusTime.png */; };
 		8BC317CC13B012CE00208E41 /* HighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BC317CA13B012CE00208E41 /* HighScoreViewController.m */; };
 		8BC317CD13B012CE00208E41 /* HighScoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BC317CB13B012CE00208E41 /* HighScoreViewController.xib */; };
@@ -51,6 +52,7 @@
 		8B1C716313B8FFB60012403B /* HighScoreInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreInputViewController.m; sourceTree = "<group>"; };
 		8B1C716413B8FFB60012403B /* HighScoreInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HighScoreInputViewController.xib; sourceTree = "<group>"; };
 		8B1C717013B99C780012403B /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
+		8B26462613E76CB700E23B7B /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		8B2F469B13B17B5F000E181F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		8B3C258813C180FA005D4D80 /* InstructionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsViewController.h; sourceTree = "<group>"; };
 		8B3C258913C180FA005D4D80 /* InstructionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsViewController.m; sourceTree = "<group>"; };
@@ -68,6 +70,9 @@
 		8B76D58413B82106000AA9F3 /* HighScoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreData.m; sourceTree = "<group>"; };
 		8B76D58B13B822AF000AA9F3 /* HighScoreSingletonData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HighScoreSingletonData.h; path = Zombies.xcodeproj/HighScoreSingletonData.h; sourceTree = SOURCE_ROOT; };
 		8B76D58C13B822AF000AA9F3 /* HighScoreSingletonData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HighScoreSingletonData.m; path = Zombies.xcodeproj/HighScoreSingletonData.m; sourceTree = SOURCE_ROOT; };
+		8BA2045913E5107400124426 /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
+		8BA2045A13E5107400124426 /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
+		8BAC868913DF8AAD0027BB36 /* AppSpecificValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSpecificValues.h; sourceTree = "<group>"; };
 		8BB6A23513C3C257009575F9 /* bonusTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bonusTime.png; sourceTree = "<group>"; };
 		8BC317C913B012CE00208E41 /* HighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoreViewController.h; sourceTree = "<group>"; };
 		8BC317CA13B012CE00208E41 /* HighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoreViewController.m; sourceTree = "<group>"; };
@@ -196,10 +201,14 @@
 		8BEBF42613AFA57B00805A3B /* Zombies */ = {
 			isa = PBXGroup;
 			children = (
+				8BAC868913DF8AAD0027BB36 /* AppSpecificValues.h */,
+				8B26462613E76CB700E23B7B /* SynthesizeSingleton.h */,
 				8BEBF42F13AFA57B00805A3B /* ZombiesAppDelegate.h */,
 				8BEBF43013AFA57B00805A3B /* ZombiesAppDelegate.m */,
 				8BEBF45113AFA66C00805A3B /* Enemy.h */,
 				8BEBF45213AFA66C00805A3B /* Enemy.m */,
+				8BA2045913E5107400124426 /* GameCenterManager.h */,
+				8BA2045A13E5107400124426 /* GameCenterManager.m */,
 				8B76D58B13B822AF000AA9F3 /* HighScoreSingletonData.h */,
 				8B76D58C13B822AF000AA9F3 /* HighScoreSingletonData.m */,
 				8B76D57D13B820ED000AA9F3 /* High Score Tree Structure */,
@@ -257,6 +266,9 @@
 /* Begin PBXProject section */
 		8BEBF41313AFA57B00805A3B /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 8BEBF41613AFA57B00805A3B /* Build configuration list for PBXProject "Zombies" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -322,6 +334,7 @@
 				8B1C716513B8FFB60012403B /* HighScoreInputViewController.m in Sources */,
 				8BE73D8613BD8D8100EC3412 /* TiltCalibrationViewController.m in Sources */,
 				8B3C258B13C180FA005D4D80 /* InstructionsViewController.m in Sources */,
+				8BA2045B13E5107500124426 /* GameCenterManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

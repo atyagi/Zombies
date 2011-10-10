@@ -17,7 +17,7 @@
 
 @property (strong) BinarySearchTree *tree;
 
-+(HighScoreSingletonData*)sharedHighScore;
++(HighScoreSingletonData*)sharedHighScoreData;
 +(NSString*)saveFilePath;
 -(void)saveHighScores;
 +(NSMutableArray*)loadHighScores;

@@ -7,17 +7,19 @@
 //
 
 #import "HighScoreViewController.h"
+#import "AppSpecificValues.h"
 
 @implementation HighScoreViewController
 
 @synthesize delegate = _delegate;
-@synthesize namesOfScores, actualScores, displayArray, highScoreData;
+@synthesize namesOfScores, actualScores, displayArray, datesOfScores;
+@synthesize currentLeaderBoard;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        highScoreData = [HighScoreSingletonData sharedHighScore];
+        highScoreData = [HighScoreSingletonData sharedHighScoreData];
     }
     return self;
 }
@@ -45,6 +47,48 @@
     [self showHighScores];
 }
 
+#pragma mark - Game Center Methods
+
+- (IBAction)viewLeaderboard:(id)sender {
+    GKLeaderboardViewController *leaderboardController = [[GKLeaderboardViewController alloc] init];
+    if (leaderboardController != nil)
+    {
+        leaderboardController.category = self.currentLeaderBoard;
+        leaderboardController.timeScope = GKLeaderboardTimeScopeWeek;
+        leaderboardController.leaderboardDelegate = self;
+        [self presentModalViewController: leaderboardController animated: YES];
+    }
+}
+
+- (void)leaderboardViewControllerDidFinish:(GKLeaderboardViewController *)viewController {
+    [self dismissModalViewControllerAnimated: YES];
+}
+
+- (void) processGameCenterAuth: (NSError*) error {
+	if(error == NULL) {
+		[[GameCenterManager sharedGameCenterManager] reloadHighScoresForCategory: self.currentLeaderBoard];
+        NSLog(@"Game Center was authorized");
+	}
+	else
+		NSLog(@"Game Center was not authorized");
+}
+
+- (void) reloadScoresComplete: (GKLeaderboard*) leaderBoard error: (NSError*) error;
+{
+	if(error == NULL)
+	{
+        NSLog(@"Scores were reloaded correctly");
+		if([leaderBoard.scores count] >0)
+		{
+			NSLog(@"And the score count is more than 0!");
+		}
+	}
+	else
+        NSLog(@"Scores were not reloaded properly");
+}
+
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -52,26 +96,44 @@
     [super viewDidLoad];
     namesOfScores.lineBreakMode = UILineBreakModeWordWrap;
     actualScores.lineBreakMode = UILineBreakModeWordWrap;
+    namesOfScores.font = [UIFont fontWithName:@"Helvetica" size:16];
+    actualScores.font = [UIFont fontWithName:@"Helvetica" size:16];
     namesOfScores.numberOfLines = 10;
     actualScores.numberOfLines = 10;
     [self showHighScores];
+    
+    [super viewDidLoad];
+    
+    self.currentLeaderBoard = kLeaderboardID;
+    
+    //If Game Center is available and...
+    if ([GameCenterManager isGameCenterAvailable]) {
+        [[GameCenterManager sharedGameCenterManager] setDelegate:self];
+        //Local player is not authenticated
+        if (! [GKLocalPlayer localPlayer].isAuthenticated)
+        {
+            [[GameCenterManager sharedGameCenterManager] authenticateLocalUser];
+        }
+    }
 }
 
 - (void)showHighScores {
     displayArray = [[highScoreData tree] getSortedHighScores];
-    int i = 1;
-    NSString *nameString = [[NSString alloc] init];
-    NSString *scoreString = [[NSString alloc] init];
-    for (HighScoreData *highScores in displayArray) {
-        nameString = [nameString stringByAppendingFormat:@"%d. ", i];
-        nameString = [nameString stringByAppendingFormat:highScores.name];
-        nameString = [nameString stringByAppendingFormat:@"\n"];
-        scoreString = [scoreString stringByAppendingFormat:@"%d", highScores.score];
-        scoreString = [scoreString stringByAppendingFormat:@"\n"];
-        i = i + 1;
+    @autoreleasepool {
+        int i = 1;
+        NSString *nameString = [[NSString alloc] init];
+        NSString *scoreString = [[NSString alloc] init];
+        for (HighScoreData *highScores in displayArray) {
+            nameString = [nameString stringByAppendingFormat:@"%d. ", i];
+            nameString = [nameString stringByAppendingFormat:highScores.name];
+            nameString = [nameString stringByAppendingFormat:@"\n"];
+            scoreString = [scoreString stringByAppendingFormat:@"%d", highScores.score];
+            scoreString = [scoreString stringByAppendingFormat:@"\n"];
+            i = i + 1;
+        }
+        namesOfScores.text = nameString;
+        actualScores.text = scoreString;
     }
-    namesOfScores.text = nameString;
-    actualScores.text = scoreString;
 }
 
 - (void)viewDidUnload
@@ -85,6 +147,31 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)retrieveTopTenScores:(id)sender
+{
+    GKLeaderboard *leaderboardRequest = [[GKLeaderboard alloc] init];
+    if (leaderboardRequest != nil)
+    {
+        leaderboardRequest.playerScope = GKLeaderboardPlayerScopeGlobal;
+        leaderboardRequest.timeScope = GKLeaderboardTimeScopeAllTime;
+        leaderboardRequest.range = NSMakeRange(1,10);
+        [leaderboardRequest loadScoresWithCompletionHandler: ^(NSArray *scores, NSError *error) {
+            if (error != nil)
+            {
+                // handle the error.
+            }
+            if (scores != nil)
+            {
+                NSLog(@"Scores exist in the leaderboard");
+                for (GKScore *score in scores) {
+                    NSLog([NSString stringWithFormat:@"Name: %@", score.playerID]);
+                    NSLog([NSString stringWithFormat:@"Score: %qi", score.value]);
+                }
+            }
+        }];
+    }
 }
 
 @end
